@@ -1,0 +1,15 @@
+# Entornos virtuales
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Archivos del sistema
+.DS_Store
+*.log
+
+# Datos (no subir train.csv)
+train.csv
+
+# Archivos de Docker
+*.log
