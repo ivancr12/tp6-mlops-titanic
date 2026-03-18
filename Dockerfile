@@ -2,13 +2,14 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-# Copiar todo el contenido del directorio actual (incluye train.csv)
-COPY . .
+# Copiar archivos necesarios
+COPY requirements.txt .
+COPY ./app ./app
+COPY ./models ./models
 
+# Instalar dependencias
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt && \
-    mkdir -p models && \
-    python scripts/train_model.py
+    pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 8000
 
